@@ -1,0 +1,27 @@
+.ui-layout-north {
+	background-image: url("../images/upper_back.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+	background: inherit;
+}
+
+.logo {
+	padding: 10px;
+}
+
+.loginInfo {
+	width: auto;
+	float: right;
+}
+
+.loginInfo tbody td {
+	text-align: right;
+}
+
+.loginInfo .loginName {
+	font-weight: bold;
+	font-size: 14px;
+}

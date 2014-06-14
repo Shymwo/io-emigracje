@@ -8,25 +8,33 @@
 <f:view contentType="text/html">
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>eMigracje</title>
-		<link rel="stylesheet" href="${request.contextPath}/app/resources/styles/blueprint/screen.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="${request.contextPath}/app/resources/styles/blueprint/print.css" type="text/css" media="print" />
+		<title>eMigracje - <ui:insert name="title"/></title>
+		<link rel="stylesheet" href="${request.contextPath}/styles/custom.css" type="text/css" />
+		<link rel="stylesheet" href="${request.contextPath}/styles/blueprint/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="${request.contextPath}/styles/blueprint/print.css" type="text/css" media="print" />
 		<ui:insert name="headIncludes"/>
 	</h:head>
 	<h:body style="font-family: Arial">
 
 		<p:layout fullPage="true">
 
-		    <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">
-		        <h:outputText value="North unit content." />
+		    <p:layoutUnit position="north" size="100">
+		        <img class="logo" src="${request.contextPath}/images/logo_small.png" />
+		        <h:panelGrid styleClass="loginInfo" columns="1">
+		        	<h:outputText value="Zalogowany jako:" />
+		        	<h:outputText styleClass="loginName" value="#{loginBean.username}" />
+		        	<h:outputLink value="logout">Wyloguj</h:outputLink>
+		        </h:panelGrid>
 		    </p:layoutUnit>
 
-		    <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">
-		        <h:outputText value="South unit content." />
+		    <p:layoutUnit position="south" size="50">
+		        <h:outputText value="#{msg['common.credits']}" />
 		    </p:layoutUnit>
 
-		    <p:layoutUnit position="west" size="200" header="Left" resizable="true" closable="true" collapsible="true">
-		        <h:outputText value="West unit content." />
+		    <p:layoutUnit position="west" size="200" header="Menu" resizable="true" collapsible="true">
+		        <h:outputLink value="home">
+		        	<h:outputText value="#{msg['menu.home']}" />
+		        </h:outputLink>
 		    </p:layoutUnit>
 
 		    <p:layoutUnit position="center">
