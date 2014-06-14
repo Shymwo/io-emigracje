@@ -4,9 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
 	parent="parent-flow">
 
-	<!--
-		Also see ../parent-flow.xml.
-	-->
+	<secured attributes="ROLE_USER" />
 
 	<var name="exampleBean" class="put.poznan.io.ExampleBean" />
 

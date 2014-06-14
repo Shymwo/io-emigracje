@@ -5,7 +5,13 @@
         version="2.0">
 
 	<application>
-		<message-bundle>JsfMessageResources</message-bundle>
+		<locale-config>
+			<default-locale>pl</default-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
 	</application>
 
 </faces-config>
