@@ -24,8 +24,10 @@ public class EmigrantAuthenticationProvider implements AuthenticationProvider {
         
         if (name.equals("student1") || name.equals("student2"))
         	grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-        else if (name.equals("admin"))
+        else if (name.equals("admin")) {
+        	grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
         	grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }
         else 
         	throw new UsernameNotFoundException("User was not found.");
 
