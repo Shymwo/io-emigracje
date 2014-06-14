@@ -21,9 +21,10 @@
 		    <p:layoutUnit position="north" size="100">
 		        <img class="logo" src="${request.contextPath}/images/logo_small.png" />
 		        <h:panelGrid styleClass="loginInfo" columns="1">
-		        	<h:outputText value="Zalogowany jako:" />
+		        	<h:outputText value="#{msg['login.loggedAs']}" />
 		        	<h:outputText styleClass="loginName" value="#{loginBean.username}" />
-		        	<h:outputLink value="logout">Wyloguj</h:outputLink>
+		        	<h:outputLink rendered="#{loginBean.username != 'anonymousUser'}"
+		        		value="logout"><h:outputText value="#{msg['login.logout']}" /></h:outputLink>
 		        </h:panelGrid>
 		    </p:layoutUnit>
 
