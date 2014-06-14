@@ -28,6 +28,7 @@
 	</security:http>
 
 	<security:authentication-manager>
+		<security:authentication-provider ref="authenticationProvider"/>
 		<security:authentication-provider>
 			<security:password-encoder hash="md5" />
 			<security:user-service>
@@ -40,5 +41,6 @@
 			</security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
+	<bean id="authenticationProvider" class="put.poznan.io.common.EmigrantAuthenticationProvider"/>
 
 </beans>
