@@ -18,25 +18,27 @@
 <h:outputText styleClass="welcome" value="#{msg['define.title']}" /><br />
 <h:form>
 	<div class="span-10">
-		<h:form id="Group" prependId="false">
+		<h:form id="GroupsBean" prependId="false">
 			<h:panelGrid columns="2">
+                <p:outputLabel for="name" value="#{msg['define.name']}" />
+                <p:inputText id="name" name="name" value="#{GroupsBean.group.name}" />
                 <p:outputLabel for="field" value="#{msg['define.field']}" />
-                <p:selectOneListbox name="field" id="field" value="#{msg['define.cs']}">
+                <p:selectOneListbox name="field" id="field" value="#{GroupsBean.group.field}">
                     <f:selectItem itemLabel="#{msg['define.cs']}" itemValue="#{msg['define.cs']}" />
                     <f:selectItem itemLabel="#{msg['define.ar']}" itemValue="#{msg['define.ar']}" />
                     <f:selectItem itemLabel="#{msg['define.bi']}" itemValue="#{msg['define.bi']}" />
                 </p:selectOneListbox>
                 <p:outputLabel for="year" value="#{msg['define.year']}" />
-                <p:selectOneListbox name="year" id="year" value="1">
+                <p:selectOneListbox name="year" id="year" value="#{GroupsBean.group.year}">
                     <f:selectItem itemLabel="I" itemValue="1" />
                     <f:selectItem itemLabel="II" itemValue="2" />
                     <f:selectItem itemLabel="III" itemValue="3" />
                     <f:selectItem itemLabel="IV" itemValue="4" />
                     <f:selectItem itemLabel="V" itemValue="5" />
                 </p:selectOneListbox>
-                <p:outputLabel for="limit" value="#{msg['define.limit']}" />
-                <p:inputText id="limit" name="limit" />
-                <p:commandButton id="submit" value="#{msg['define.button']}" ajax="false"/>
+                <p:outputLabel for="maxlimit" value="#{msg['define.maxlimit']}" />
+                <p:inputText id="maxlimit" name="limit" value="#{GroupsBean.group.maxlimit}" />
+                <p:commandButton id="submit" value="#{msg['define.button']}" action="#{GroupsBean.submit}"/>
 		    </h:panelGrid>
 		</h:form>
 	</div>

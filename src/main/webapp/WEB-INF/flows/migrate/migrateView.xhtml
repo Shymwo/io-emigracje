@@ -14,7 +14,28 @@
 
 <ui:define name="content">
 <h:form>
-	<!-- 	page content here -->
+	<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+	<h3>Wyślij email do prowadzącego</h3><br/>
+	<h:outputText value="Prowadzący:" />
+	<p:selectOneMenu value="#{migrateBean.message.name}">
+	    <f:selectItem itemLabel="Wybierz" itemValue="" />
+	    <f:selectItem itemLabel="Wykładowca1" itemValue="wykladowca1" />
+	</p:selectOneMenu><br/>
+	<h:outputText value="Nowa grupa:" />
+	<p:selectOneMenu value="#{migrateBean.message.groupName}">
+	    <f:selectItem itemLabel="Wybierz" itemValue="" />
+	    <f:selectItem itemLabel="pon 8:00" itemValue="grupa1" />
+	    <f:selectItem itemLabel="pon 9:45" itemValue="grupa2" />
+	    <f:selectItem itemLabel="pon 11:45" itemValue="grupa3" />
+	</p:selectOneMenu><br/>
+	<h:outputText value="Tytuł wiadomości:" />
+	<p:inputText value="#{migrateBean.message.title}" /><br/>
+	<h:outputText value="Uzasadnienie:" /><br/>
+	<p:inputTextarea rows="5" cols="30" counter="display" maxlength="255"
+		counterTemplate="Pozostało znaków {0}." autoResize="false" value="#{migrateBean.message.text}"/><br/>
+	<h:outputText id="display" /><br/>
+	<p:commandButton value="Wyślij" actionListener="#{migrateBean.sendMail}" />
 </h:form>
 </ui:define>
 
