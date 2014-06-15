@@ -15,9 +15,9 @@
 		<property name="connection.password"></property>
 
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		
 
-		<mapping class="put.poznan.io.models.Group" /><mapping class="com.srccodes.example.hibernate.Contact"/>
+		<mapping class="put.poznan.io.models.Group" />
+		<mapping class="com.srccodes.example.hibernate.Contact"/>
 		<mapping class="put.poznan.io.models.Message"/>
 	</session-factory>
 </hibernate-configuration>

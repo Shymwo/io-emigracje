@@ -1,18 +1,22 @@
 package put.poznan.io.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "message")
-public class Message {
+public class Message implements Serializable {
+
+	private static final long serialVersionUID = -2568380708733136466L;
 
 	private Integer id;
 
 	private String name;
 
-	private String group;
+	private String groupName;
 
 	private String title;
 
@@ -35,12 +39,12 @@ public class Message {
 		this.name = name;
 	}
 
-	public String getGroup() {
-		return group;
+	public String getGroupName() {
+		return groupName;
 	}
 
-	public void setGroup(String group) {
-		this.group = group;
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
 	}
 
 	public String getTitle() {
