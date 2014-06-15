@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head />
+<body>
+<ui:composition>
+
+	<ul>
+
+		<li><p:link href="home" value="#{msg['menu.home']}" /></li>
+
+		<c:if test="#{loginBean.hasRole('ROLE_STUDENT')}">
+			<li><p:link href="membership" value="#{msg['menu.showState']}" /></li>
+			<li><p:link href="migrate" value="#{msg['menu.migrateForm']}" /></li>
+			<li><p:link href="studentGroups" value="#{msg['menu.showGroups']}" /></li>
+		</c:if>
+
+		<c:if test="#{loginBean.hasRole('ROLE_ADMIN')}">
+			<li><p:link href="adminGroups" value="#{msg['menu.showGroups']}" /></li>
+			<li><p:link href="define" value="#{msg['menu.defineGroup']}" /></li>
+		</c:if>
+
+	</ul>
+
+</ui:composition>
+</body>
+</html>

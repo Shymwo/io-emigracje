@@ -33,9 +33,7 @@
 		    </p:layoutUnit>
 
 		    <p:layoutUnit position="west" size="200" header="Menu" resizable="true" collapsible="true">
-		        <h:outputLink value="home">
-		        	<h:outputText value="#{msg['menu.home']}" />
-		        </h:outputLink>
+		        <ui:include src="menu.xhtml" />
 		    </p:layoutUnit>
 
 		    <p:layoutUnit position="center">

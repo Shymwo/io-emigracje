@@ -14,24 +14,24 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 @Component
 public class EmigrantAuthenticationProvider implements AuthenticationProvider {
- 
+
     @Override
-    public Authentication authenticate(Authentication authentication) 
+    public Authentication authenticate(Authentication authentication)
       throws AuthenticationException {
         String name = authentication.getName();
         String password = authentication.getCredentials().toString();
         List<GrantedAuthority> grantedAuths = new ArrayList<>();
-        
+
         if (name.equals("student1") || name.equals("student2"))
-        	grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
+        	grantedAuths.add(new SimpleGrantedAuthority("ROLE_STUDENT"));
         else if (name.equals("admin")) {
-        	grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
+        	grantedAuths.add(new SimpleGrantedAuthority("ROLE_STUDENT"));
         	grantedAuths.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }
-        else 
+        else
         	throw new UsernameNotFoundException("User was not found.");
 
- 
+
         /*
         // use the credentials to try to authenticate against the third party system
         if (authenticatedAgainstThirdPartySystem()) {
@@ -42,7 +42,7 @@ public class EmigrantAuthenticationProvider implements AuthenticationProvider {
         */
         return new UsernamePasswordAuthenticationToken(name, password, grantedAuths);
     }
- 
+
     @Override
     public boolean supports(Class<?> authentication) {
         return authentication.equals(UsernamePasswordAuthenticationToken.class);

@@ -25,3 +25,23 @@
 	font-weight: bold;
 	font-size: 14px;
 }
+
+.homeDiv {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.welcome {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.welcomeButtons tbody td {
+	text-align: center;
+}
+
+.welcomeButtons button {
+	float: none;
+}

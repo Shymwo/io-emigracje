@@ -33,10 +33,10 @@
 			<security:password-encoder hash="md5" />
 			<security:user-service>
 				<security:user name="student1" password="5e5545d38a68148a2d5bd5ec9a89e327"
-					authorities="ROLE_USER" />
+					authorities="ROLE_STUDENT" />
 				<security:user name="student2" password="213ee683360d88249109c2f92789dbc3"
-					authorities="ROLE_USER" />
-				<security:user name="admin1" password="e00cf25ad42683b3df678c61f42c6bda"
+					authorities="ROLE_STUDENT" />
+				<security:user name="wykladowca1" password="56c5a791101ca9958d06300d1c03a597"
 					authorities="ROLE_ADMIN" />
 			</security:user-service>
 		</security:authentication-provider>
