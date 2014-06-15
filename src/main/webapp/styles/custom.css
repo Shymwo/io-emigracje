@@ -26,7 +26,7 @@
 	font-size: 14px;
 }
 
-.homeDiv {
+.homeDiv, .define {
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
