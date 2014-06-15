@@ -24,6 +24,10 @@
 			<li><p:link href="define" value="#{msg['menu.defineGroup']}" /></li>
 		</c:if>
 
+		<c:if test="#{loginBean.username != 'anonymousUser'}">
+			<li><p:link href="inbox" value="#{msg['menu.inbox']}" /></li>
+		</c:if>
+
 	</ul>
 
 </ui:composition>

@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
 	parent="parent-flow">
 
-	<secured attributes="ROLE_STUDENT" />
+	<secured attributes="ROLE_ADMIN,ROLE_STUDENT" />
 
-	<var name="migrateBean" class="put.poznan.io.beans.SendFormBean" />
+	<var name="inboxBean" class="put.poznan.io.beans.InboxBean" />
 
-	<view-state id="migrateView" />
+	<view-state id="inboxView" />
 
 </flow>
