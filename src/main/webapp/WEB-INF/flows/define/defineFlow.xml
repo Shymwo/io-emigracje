@@ -6,7 +6,8 @@
 
 	<secured attributes="ROLE_ADMIN" />
 
-<!-- 	<var name="exampleBean" class="put.poznan.io.ExampleBean" /> -->
+<!-- 	<var name="exampleBean" class="put.poznan.io.ExampleBean" /> --><var
+		name="GroupsBean" class="put.poznan.io.beans.GroupsBean" />
 
 	<view-state id="defineView" />
 
