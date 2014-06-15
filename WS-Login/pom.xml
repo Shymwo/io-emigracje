@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>eStudent</artifactId>
+	<name>eStudent</name>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+
+	<properties>
+		<java-version>1.7</java-version>
+		<springframework-version>3.2.9.RELEASE</springframework-version>
+		<springwebflow-version>2.4.0.RELEASE</springwebflow-version>
+		<springsecurity-version>3.2.4.RELEASE</springsecurity-version>
+		<org.slf4j-version>1.7.7</org.slf4j-version>
+	</properties>
+
+	<dependencies>
+	<dependency>
+	<groupId>com.sun.xml.ws</groupId>
+	<artifactId>jaxws-rt</artifactId>
+	<version>2.2.8</version>
+</dependency>
+	
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${java-version}</source>
+					<target>${java-version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install</id>
+						<phase>install</phase>
+						<goals>
+							<goal>sources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration><port>8081</port></configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<groupId>put.poznan.io</groupId>
+</project>

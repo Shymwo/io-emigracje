@@ -1,0 +1,1 @@
+Stworzyłem aplikację (WS-Login) z Web Servicem, który jest wykorzystany do logowania. Aby odpalić nowy serwer tomcat'a wchodzimy w WS-Login i wpisujemy mvn tomcat7:run. 
