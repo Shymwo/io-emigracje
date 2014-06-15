@@ -36,8 +36,8 @@
                     <f:selectItem itemLabel="IV" itemValue="4" />
                     <f:selectItem itemLabel="V" itemValue="5" />
                 </p:selectOneListbox>
-                <p:outputLabel for="limit" value="#{msg['define.limit']}" />
-                <p:inputText id="limit" name="limit" value="#{GroupsBean.group.limit}" />
+                <p:outputLabel for="maxlimit" value="#{msg['define.maxlimit']}" />
+                <p:inputText id="maxlimit" name="limit" value="#{GroupsBean.group.maxlimit}" />
                 <p:commandButton id="submit" value="#{msg['define.button']}" action="#{GroupsBean.submit}"/>
 		    </h:panelGrid>
 		</h:form>
